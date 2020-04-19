@@ -24,6 +24,25 @@ class EnderecoController {
       observacoes,
     });
   }
+
+  async index(req, res) {
+    const { idUsuario } = req;
+
+    const addresses = await Endereco.findAll({
+      where: { id_usuario: idUsuario },
+      attributes: [
+        'rua',
+        'numero',
+        'bairro',
+        'cidade',
+        'estado',
+        'cep',
+        'observacoes',
+      ],
+    });
+
+    return res.json(addresses);
+  }
 }
 
 export default new EnderecoController();

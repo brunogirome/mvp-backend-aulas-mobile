@@ -15,6 +15,7 @@ routes.use(authMiddleware);
 
 routes.get('/usuarios', UsuarioController.index);
 
+routes.get('/enderecos', EnderecoController.index);
 routes.post('/enderecos', EnderecoController.store);
 
 export default routes;
