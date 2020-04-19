@@ -4,6 +4,7 @@ import UsuarioController from './app/controllers/UsuarioController';
 import SessionController from './app/controllers/SessionController';
 import EnderecoController from './app/controllers/EnderecoController';
 import ProdutoController from './app/controllers/ProdutoController';
+import PedidoController from './app/controllers/PedidoController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -16,6 +17,8 @@ routes.get('/produtos/:categoria/:sub_categoria', ProdutoController.index);
 routes.post('/produtos', ProdutoController.store);
 
 routes.use(authMiddleware);
+
+routes.post('/pedidos', PedidoController.store);
 
 routes.get('/usuarios', UsuarioController.index);
 

@@ -18,7 +18,7 @@ class ProdutoController {
 
     const produtos = await Produto.findAll({
       where: { categoria, sub_categoria },
-      attributes: ['nome', 'peso', 'preco', 'categoria'],
+      attributes: ['id', 'nome', 'peso', 'preco', 'categoria'],
     });
 
     return res.json(produtos);

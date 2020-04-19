@@ -5,7 +5,8 @@ class Pedido extends Model {
     super.init(
       {
         data: Sequelize.DATE,
-        status: Sequelize.BOOLEAN,
+        status: Sequelize.INTEGER,
+        valor: Sequelize.DOUBLE,
       },
       {
         sequelize,
@@ -20,9 +21,16 @@ class Pedido extends Model {
       foreignKey: 'id_usuario',
       as: 'usuario',
     });
+
     this.belongsTo(models.Endereco, {
       foreignKey: 'id_endereco',
       as: 'endereco',
+    });
+
+    this.belongsToMany(models.Produto, {
+      foreignKey: 'id_pedido',
+      through: 'pedidos_produtos',
+      as: 'pedido',
     });
   }
 }

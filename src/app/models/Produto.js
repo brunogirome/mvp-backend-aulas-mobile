@@ -17,6 +17,14 @@ class Produto extends Model {
 
     return this;
   }
+
+  static associate(models) {
+    this.belongsToMany(models.Pedido, {
+      foreignKey: 'id_produto',
+      through: 'pedidos_produtos',
+      as: 'produto',
+    });
+  }
 }
 
 export default Produto;
