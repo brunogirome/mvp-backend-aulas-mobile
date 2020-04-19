@@ -1,10 +1,5 @@
-import express from 'express';
+import 'dotenv/config';
 
-const app = express();
+import app from './app';
 
-app.use(express.Router());
-app.use(express.json());
-
-app.get('/', (req, res) => res.json({ message: 'Hello World.' }));
-
-app.listen(3333);
+app.listen(process.env.APP_PORT);
