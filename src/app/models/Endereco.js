@@ -23,13 +23,13 @@ class Endereco extends Model {
   static associate(models) {
     this.belongsTo(models.Usuario, {
       foreignKey: 'id_usuario',
-      as: 'usuario',
+      as: 'dono',
     });
 
-    this.belongsTo(models.Pedido, {
+    /* this.belongsTo(models.Pedido, {
       foreignKey: 'id_endereco',
       as: 'endereco',
-    });
+    }); */
   }
 }
 

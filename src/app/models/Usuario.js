@@ -29,6 +29,13 @@ class Usuario extends Model {
   checkPassword(senha) {
     return bcrypt.compare(senha, this.hash_senha);
   }
+
+  static associate(models) {
+    this.belongsTo(models.Endereco, {
+      foreignKey: 'id_usuario',
+      as: 'usuario',
+    });
+  }
 }
 
 export default Usuario;

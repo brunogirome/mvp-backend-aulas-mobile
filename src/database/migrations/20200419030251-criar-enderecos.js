@@ -33,14 +33,14 @@ module.exports = {
       },
       observacoes: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       id_usuario: {
         type: Sequelize.INTEGER,
         references: { model: 'usuarios', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
-        allowNull: true,
+        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,
