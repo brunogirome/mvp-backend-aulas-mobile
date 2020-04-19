@@ -1,9 +1,11 @@
+import { Op } from 'sequelize';
+
 import Usuario from '../models/Usuario';
 
 class UsuarioController {
   async store(req, res) {
     const userExists = await Usuario.findOne({
-      where: { email: req.body.email },
+      where: { [Op.or]: [{ email: req.body.email }, { cpf: req.body.cpf }] },
     });
 
     if (userExists) {
