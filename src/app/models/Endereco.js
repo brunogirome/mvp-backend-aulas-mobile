@@ -25,11 +25,6 @@ class Endereco extends Model {
       foreignKey: 'id_usuario',
       as: 'dono',
     });
-
-    /* this.belongsTo(models.Pedido, {
-      foreignKey: 'id_endereco',
-      as: 'endereco',
-    }); */
   }
 }
 

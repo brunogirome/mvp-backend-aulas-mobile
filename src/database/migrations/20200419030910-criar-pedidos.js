@@ -12,11 +12,11 @@ module.exports = {
         allowNull: false,
       },
       status: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.DOUBLE,
         allowNull: false,
       },
       valor: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: false,
       },
       id_usuario: {

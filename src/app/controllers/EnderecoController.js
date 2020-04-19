@@ -2,8 +2,6 @@ import Endereco from '../models/Endereco';
 
 class EnderecoController {
   async store(req, res) {
-    // const { rua, numero, bairro, cidade, estado, cep, observacoes } = req.body
-
     const {
       rua,
       numero,

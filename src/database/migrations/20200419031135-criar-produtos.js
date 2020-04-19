@@ -16,7 +16,7 @@ module.exports = {
         allowNull: false,
       },
       preco: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DOUBLE,
         allowNull: false,
       },
       categoria: {
