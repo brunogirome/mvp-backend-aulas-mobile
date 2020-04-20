@@ -30,7 +30,7 @@ class Pedido extends Model {
     this.belongsToMany(models.Produto, {
       foreignKey: 'id_pedido',
       through: 'pedidos_produtos',
-      as: 'pedido',
+      as: 'produtos',
     });
   }
 }

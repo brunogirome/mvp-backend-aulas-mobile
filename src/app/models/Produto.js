@@ -22,7 +22,7 @@ class Produto extends Model {
     this.belongsToMany(models.Pedido, {
       foreignKey: 'id_produto',
       through: 'pedidos_produtos',
-      as: 'produto',
+      as: 'pedidos',
     });
   }
 }

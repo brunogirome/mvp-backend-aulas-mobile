@@ -59,6 +59,29 @@ class PedidoController {
       produtos: products,
     });
   }
+
+  async index(req, res) {
+    const { idUsuario } = req;
+
+    const pedidos = await Pedido.findAll({
+      where: { id_usuario: idUsuario },
+      attributes: ['id', 'status', 'data', 'valor'],
+      include: [
+        {
+          model: Produto,
+          as: 'produtos',
+          attributes: ['nome', 'peso', 'preco', 'categoria', 'sub_categoria'],
+          through: {
+            model: PedidoProduto,
+            as: 'quantidade',
+            attributes: ['quantidade'],
+          },
+        },
+      ],
+    });
+
+    return res.json(pedidos);
+  }
 }
 
 export default new PedidoController();

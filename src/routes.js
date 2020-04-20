@@ -18,6 +18,7 @@ routes.post('/produtos', ProdutoController.store);
 
 routes.use(authMiddleware);
 
+routes.get('/pedidos', PedidoController.index);
 routes.post('/pedidos', PedidoController.store);
 
 routes.get('/usuarios', UsuarioController.index);

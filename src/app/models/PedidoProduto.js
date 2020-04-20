@@ -12,7 +12,7 @@ class PedidoProduto extends Model {
     return this;
   }
 
-  static associate(models) {
+  /* static associate(models) {
     this.belongsTo(models.Pedido, {
       foreignKey: 'id_pedido',
       as: 'pedido',
@@ -22,7 +22,7 @@ class PedidoProduto extends Model {
       foreignKey: 'id_produto',
       as: 'produto',
     });
-  }
+  } */
 }
 
 export default PedidoProduto;
